@@ -18,18 +18,17 @@ html(lang="en")
 		meta(name="theme-color", content="#fff")
 
 		link(rel="stylesheet", href="./css/style.min.css?3")
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 	body
 		block content_block
 
-		script(src="js/common.min.js")
+		script(src="js/script.min.js")
 		script.
 			window.onload = function(){
-				hup({
-					lang: 'en',
-					place: 'right',
-					//- sitesArmy: [],
-					//- sitesHumanitarian: []
-				});
+				hup();
 			}
 
 <!-- Telegram: @rokkido -->

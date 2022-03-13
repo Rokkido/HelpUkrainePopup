@@ -12,11 +12,7 @@ const realFavicon   = require('gulp-real-favicon')
 const gulpif        = require('gulp-if')
 const qrcode        = require('qrcode-terminal')
 const rename        = require('gulp-rename')
-var injectCSS       = require('gulp-css-to-js-style');
-
-
-const allMinify = false // минифицировать все файлы
-
+const styleToJs     = require('gulp-style-to-js')
 
 // Sass
 gulp.task('styles', function() {
@@ -24,7 +20,7 @@ gulp.task('styles', function() {
 		.pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
 		.pipe(rename({ suffix: '.min', prefix : '' }))
 		.pipe(autoprefixer(['last 2 versions']))
-		.pipe( gulpif(allMinify, cleanCSS({level: { 1: { specialComments: 0 } } })) )
+		.pipe( cleanCSS({level: { 1: { specialComments: 0 } } }) )
 		.pipe(gulp.dest('app/css'))
 		.pipe(browserSync.stream())
 })
@@ -32,10 +28,10 @@ gulp.task('styles', function() {
 // Js
 gulp.task('scripts', function() {
 	return gulp.src([
-		`app/_dev/js/common.js` // Всегда в конце
+		`app/_dev/js/script.js` // Всегда в конце
 		])
-		.pipe(concat('common.min.js'))
-		.pipe( gulpif(allMinify, uglify()) ) // Минификатор
+		.pipe(concat('script.min.js'))
+		.pipe( uglify({output: {comments: /^!/}}) ) // Минификатор
 		.pipe(gulp.dest('app/js'))
 		.pipe(browserSync.stream())
 })
@@ -152,22 +148,29 @@ gulp.task('favicon', function(done) {
 	}
 })
 
-// build
-gulp.task('css-to-js', function(){
-	gulp.src('./src/**.css')
-		.pipe(injectCSS())
-		.pipe(concat('injected-styles.js'))
-		.pipe(gulp.dest('./dist'));
-});
+// Css to js
+gulp.task('cssToJs', function(){
+	return gulp.src('app/css/style.min.css')
+		.pipe( styleToJs() )
+		.pipe(concat('hup-style.js'))
+		.pipe(gulp.dest('app/js'))
+})
 
+// Build
+gulp.task('build', function(){
+	return gulp.src(['app/js/script.min.js', 'app/js/hup-style.js'])
+		.pipe(concat('hup.min.js'))
+		.pipe(gulp.dest('dist'))
+})
 
 // Watch
 gulp.task('watch', function(){
 	gulp.watch(`app/_dev/sass/**/*.sass`, gulp.parallel('styles'))
+	gulp.watch(`app/_dev/sass/**/*.sass`, gulp.parallel('cssToJs'))
 	gulp.watch(`app/_dev/js/**/*.js`, gulp.parallel('scripts'))
 	gulp.watch(`app/_dev/pug/**/*.pug`, gulp.parallel('pug'))
 })
 
 
 // gulp default
-gulp.task('default', gulp.parallel('styles', 'scripts', 'pug', 'browser-sync', 'watch', 'favicon'))
+gulp.task('default', gulp.parallel('styles', 'cssToJs', 'scripts', 'pug', 'browser-sync', 'watch', 'favicon'))

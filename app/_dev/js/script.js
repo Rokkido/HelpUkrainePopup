@@ -1,7 +1,7 @@
-/*
-	hup 1.0.0
-	author: Rokkido
-	http://portfolio.rokkido.cx.ua/
+/*!
+* hup.js 1.0.0
+* author: Rokkido
+* http://portfolio.rokkido.cx.ua/
 */
 
 ;(function(window){
@@ -14,7 +14,7 @@
 		let sitesHumanitarian;
 
 		// sites army
-		if ( params.sitesArmy == undefined ) {
+		if ( params == undefined || params.sitesArmy == undefined) {
 			sitesArmy = [
 				{
 					title: {
@@ -82,7 +82,7 @@
 		}
 
 		// sites humanitarian
-		if ( params.sitesHumanitarian == undefined ) {
+		if ( params == undefined || params.sitesHumanitarian == undefined ) {
 			sitesHumanitarian = [
 				{
 					title: {
@@ -121,11 +121,7 @@
 					}
 				},
 				{
-					title: {
-						en: 'Unchain.Fund',
-						ua: 'Unchain.Fund',
-						ru: 'Unchain.Fund'
-					},
+					title: 'Unchain.Fund',
 					description: {
 						en: 'Unchain is a charity project created by blockchain activists.',
 						ua: 'Unchain — це благодійний проект, створений активістами блокчейн.',
