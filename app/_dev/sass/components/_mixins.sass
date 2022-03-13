@@ -1,0 +1,73 @@
+// Media Query
+=mq($width)
+	@media only screen and (max-width : $width + px)
+		@content
+
+=mqm($width)
+	@media only screen and (min-width : $width + 1 + px)
+		@content
+
+=port()
+	@media (orientation: portrait)
+		@content
+
+
+// adaptive value
+=adval($property, $startSize: 30, $minSize: 15)
+	$addSize: $startSize - $minSize
+	#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / (#{$containerWidthNumb} - 320)))
+
+
+// Font Family
+=ff($fontName, $fontFamily, $fontWeight, $fontStyle: normal)
+	@font-face
+		font-family: $fontName
+		font-style: $fontStyle
+		font-weight: $fontWeight
+		font-display: swap
+		src: url("../fonts/#{$fontFamily}.ttf") format("truetype")
+
+// Pseudo
+=pseudo($content: '', $display: block, $position: absolute)
+	content: $content
+	display: $display
+	position: $position
+
+// box
+=box()
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+
+// Size
+=size($width, $height: $width)
+	width: $width
+	height: $height
+
+// Translate
+=move($x: 0, $y: 0)
+	transform: translate($x, $y)
+
+=scale($x: 0, $y: $x)
+	transform: scale($x, $y)
+
+=rotate($deg: 0)
+	transform: rotate($deg)
+
+
+
+
+
+
+
+
+
+
+
+// IE10+ Media
+=IE
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+		@content
+
+
