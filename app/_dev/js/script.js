@@ -1,7 +1,7 @@
 /*!
-* hup.js 1.0.0
+* hup.min.js 1.0.0
 * author: Rokkido
-* http://portfolio.rokkido.cx.ua/
+* https://hup.rokkido.cx.ua
 */
 
 ;(function(window){
