@@ -150,7 +150,7 @@
 		
 		const dataText = {
 			header: {
-				en: 'Help for Ukraine in the war with Russia',
+				en: 'Help Ukraine in the war with Russia',
 				ua: 'Допомога Україні у війні з Росією',
 				ru: 'Помощь Украине в войне с Россией'
 			},

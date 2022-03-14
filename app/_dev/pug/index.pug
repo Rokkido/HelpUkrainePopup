@@ -16,17 +16,22 @@ block content_block
         a(href="https://github.com/Rokkido/HelpUkrainePopup" target="_blank") GitHub
 
     br
-    h2 Install
+    h2 Install (cdn)
     code: pre
       span <
-      | script src="/js/hup.min.js"
+      | script src="https://cdn.jsdelivr.net/gh/Rokkido/HelpUkrainePopup/dist/hup.min.js"
       span ><
-      | script
+      | /script
       span >
 
     br
     h2 Start using
-    code: pre hup();
+    code: pre
+      span <
+      | script
+      span >hup();<
+      | /script
+      span >
 
     br
     h2 Advanced methods
