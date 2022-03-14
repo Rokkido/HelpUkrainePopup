@@ -64,17 +64,17 @@
 				},
 				{
 					title: {
-						en: 'Cryptocurrency',
-						ua: 'Криптовалюта',
-						ru: 'Криптовалюта'
+						en: 'Aid For Ukraine (cryptocurrency)',
+						ua: 'Aid For Ukraine (криптовалюта)',
+						ru: 'Aid For Ukraine (криптовалюта)'
 					},
 					description: {
 						en: 'Official crypto wallets for transferring money for the Ukrainian army.',
 						ua: 'Офіційні криптогаманці, куди можна переказати гроші для армії України.',
 						ru: 'Официальные криптокошельки, куда можно перевести деньги для армии Украины.'
 					},
-					currency: 'BTC, ETH, USDT, DOT, SOL, DOGE',
-					link: 'https://thedigital.gov.ua/news/ofitsiyni-kriptogamantsi-kudi-mozhna-perekazati-groshi-dlya-armii-ukraini'
+					currency: 'BTC, ETH, USDT, DOT, SOL, DOGE, XMR, ICX, NEO',
+					link: 'https://donate.thedigital.gov.ua'
 				}
 			];
 		} else {
@@ -171,8 +171,8 @@
 				},
 				name: {
 					en: 'The armed forces',
-					ua: 'Збройні сили',
-					ru: 'Вооруженные силы'
+					ua: 'Армія',
+					ru: 'Армия'
 				},
 				sites: sitesArmy
 			},
