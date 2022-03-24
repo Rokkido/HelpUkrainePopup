@@ -145,7 +145,6 @@
 			place = 'right';
 		}
 
-		const utm = '?utm_source=HelpUkrainePopup';
 		const $body = $('body');
 		
 		const dataText = {
@@ -255,7 +254,7 @@
 
 			val.sites.forEach(site => {
 				$sites += `
-					<a class="hup-item" href="${ getLangString(site.link) + utm }" target="_blank">
+					<a class="hup-item" href="${ getLangString(site.link) }" target="_blank">
 						<div class="hup-tit">${ getLangString(site.title) }</div>
 						<div class="hup-p">${ getLangString(site.description) }</div>
 						<div class="hup-currency">${ getLangString(site.currency) }</div>
