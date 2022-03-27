@@ -89,17 +89,6 @@ hup({
     }
   ],
   sitesHumanitarian: [
-    {
-      title: {
-        en: 'Red Cross',
-        ua: 'Червоний Хрест',
-        ru: 'Красный Крест'
-      },
-      description: {
-        en: 'All raised funds will be used to support victims, blood donation, mobilization of volunteers and resources.',
-        ua: 'Всі залучені кошти будуть використані на підтримку постраждалих, донорство крові, мобілізацію волонтерів та ресурсів.',
-        ru: 'Все привлеченные средства будут использованы в поддержку пострадавших, донорство крови, мобилизацию волонтеров и ресурсов.'
-      },
       currency: 'USD, EUR, UAH',
       link: {
         en: 'https://donate.redcrossredcrescent.org/ua/donate/~my-donation',
