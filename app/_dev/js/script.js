@@ -73,7 +73,7 @@
 						ua: 'Офіційні криптогаманці, куди можна переказати гроші для армії України.',
 						ru: 'Официальные криптокошельки, куда можно перевести деньги для армии Украины.'
 					},
-					currency: 'BTC, ETH, USDT, DOT, SOL, DOGE, XMR, ICX, NEO',
+					currency: 'BTC, ETH, USDT, LUNA, SOL, DOT, ADA, DOGE, ALGO, HBAR, XMR, ICX, CSPR',
 					link: 'https://donate.thedigital.gov.ua'
 				}
 			];
@@ -84,24 +84,6 @@
 		// sites humanitarian
 		if ( params == undefined || params.sitesHumanitarian == undefined ) {
 			sitesHumanitarian = [
-				{
-					title: {
-						en: 'Red Cross',
-						ua: 'Червоний Хрест',
-						ru: 'Красный Крест'
-					},
-					description: {
-						en: 'All raised funds will be used to support victims, blood donation, mobilization of volunteers and resources.',
-						ua: 'Всі залучені кошти будуть використані на підтримку постраждалих, донорство крові, мобілізацію волонтерів та ресурсів.',
-						ru: 'Все привлеченные средства будут использованы в поддержку пострадавших, донорство крови, мобилизацию волонтеров и ресурсов.'
-					},
-					currency: 'USD, EUR, UAH',
-					link: {
-						en: 'https://donate.redcrossredcrescent.org/ua/donate/~my-donation',
-						ua: 'https://donate.redcrossredcrescent.org/ua/donate/~%D0%BC%D0%BE%D1%8F-%D0%BF%D0%BE%D0%B6%D0%B5%D1%80%D1%82%D0%B2%D0%B0',
-						ru: 'https://donate.redcrossredcrescent.org/ua/donate/~my-donation'
-					}
-				},
 				{
 					title: {
 						en: 'National Bank of Ukraine',
@@ -128,7 +110,7 @@
 						ru: 'Unchain — благотворительный проект, созданный активистами блокчейн.'
 					},
 					currency: 'BTC, ETH, BSC, Polygon, Harmony, NEAR, Avalanche, Celo, Terra, IoTeX',
-					link: 'https://unchain.fund/donate'
+					link: 'https://unchain.fund/#donate'
 				}
 			]
 		} else {
